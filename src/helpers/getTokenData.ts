@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import jwt from "jsonwebtoken";
-
+// get cookies data and process it
 export const getDataFromToken = (request: NextRequest) => {
     try {
        const token = request.cookies.get("token")?.value || '';

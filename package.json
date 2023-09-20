@@ -27,6 +27,8 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.3"
+    "@types/bcryptjs": "^2.4.4",
+    "@types/jsonwebtoken": "^9.0.3",
+    "@types/nodemailer": "^6.4.10"
   }
 }
