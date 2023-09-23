@@ -25,12 +25,13 @@ export const sendEmail = async({email, emailType, userId}: any) => {
               pass: process.env.NODEMAILER_PASSWORD
             }
           });
+          const href = `${process.env.DOMAIN}/${emailType === 'VERIFY' ? "verifyemail" : "resetpassword"}?token=${hashedToken}`
 
           const mailOptions = {
             from: 'getu@gmail.com',
             to: email,
             subject: emailType === 'VERIFY' ? "Verify your email" : "Reset your password",
-            html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> to ${emailType === "VERIFY" ? "Verify your email" : "reset your password"} or copy and paste the link below in your browser. <br> ${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>`
+            html: `<p>Click <a href=${href}>here</a> to ${emailType === "VERIFY" ? "Verify your email" : "reset your password"} or copy and paste the link below in your browser. <br> ${href}</p>`
           }
           const mailResponse = await transport.sendMail(mailOptions)
 

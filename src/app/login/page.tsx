@@ -64,6 +64,7 @@ export default function LoginPage() {
                 onClick={onSignIn}
                 disabled={buttonDisabled}
                 className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'>Login</button>
+                <Link href="/resetpassword">Reset Password</Link>
                 <Link href="/signup">Visit Signup Page</Link>
         </div>
     )
