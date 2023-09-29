@@ -24,6 +24,8 @@ export default function ResetPasswordPage() {
     const onSubmit =async () => {
         try {
             setLoading(true);
+            // verify if passwords are matched
+            
             const response = await axios.post("/api/users/resetpassword", {...user, token});
 
             router.push("/login");   
@@ -35,7 +37,6 @@ export default function ResetPasswordPage() {
     }
     useEffect(() => {
         const urlToken = window.location.href.split('=')[1];
-        console.log(urlToken)
         setToken(urlToken || "");
     }, [])
     useEffect(() => {
